@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/player_hud.gd" id="1_d1j7r"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_d1j7r")
+
+[node name="TopLeft" type="MarginContainer" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 296.0
+offset_bottom = 210.0
+
+[node name="VBox" type="VBoxContainer" parent="TopLeft"]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "HP 0 / 0"
+
+[node name="HealthBar" type="ProgressBar" parent="TopLeft/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 18)
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="LevelLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "Lv. 1  SP: 0"
+
+[node name="ManaLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "MP 0 / 0"
+
+[node name="ManaBar" type="ProgressBar" parent="TopLeft/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 14)
+max_value = 100.0
+show_percentage = false
+
+[node name="XpBar" type="ProgressBar" parent="TopLeft/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(260, 14)
+max_value = 100.0
+show_percentage = false
+
+[node name="XpLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "XP 0 / 100"
+
+[node name="StatsLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "ATK 0  DEF 0"
+
+[node name="SkillLabel" type="Label" parent="TopLeft/VBox"]
+layout_mode = 2
+text = "Q/E/R: Skills   C/I: Panel"

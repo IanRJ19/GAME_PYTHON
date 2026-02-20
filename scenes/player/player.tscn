@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_dfmx3"]
+[ext_resource type="Script" path="res://scripts/combat/melee_hitbox.gd" id="2_hyyca"]
+[ext_resource type="Script" path="res://scripts/combat/health_component.gd" id="3_3sjl4"]
+[ext_resource type="Script" path="res://scripts/combat/hurtbox.gd" id="4_hqekf"]
+[ext_resource type="Script" path="res://scripts/combat/stats_component.gd" id="5_ubaxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rqj8"]
+size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b46rp"]
+size = Vector2(20, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5oxd"]
+size = Vector2(26, 24)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_dfmx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1rqj8")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_3sjl4")
+max_health = 100
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_ubaxb")
+strength = 12
+agility = 11
+vitality = 12
+energy = 10
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("4_hqekf")
+health_path = NodePath("../Health")
+owner_body_path = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_b46rp")
+
+[node name="AttackPivot" type="Node2D" parent="."]
+position = Vector2(28, 0)
+
+[node name="MeleeHitbox" type="Area2D" parent="AttackPivot"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("2_hyyca")
+damage = 24
+knockback_force = 280.0
+target_group = &"enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPivot/MeleeHitbox"]
+shape = SubResource("RectangleShape2D_m5oxd")
+
+[node name="Visual" type="Polygon2D" parent="."]
+color = Color(0.94902, 0.639216, 0.227451, 1)
+polygon = PackedVector2Array(-10, -16, 10, -16, 10, 16, -10, 16)
+visible = false
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(4.2, 4.2)
+frame = 0
+
+[node name="SwordPivot" type="Node2D" parent="."]
+position = Vector2(10, -2)
+rotation = -0.314159
+
+[node name="Blade" type="Polygon2D" parent="SwordPivot"]
+color = Color(0.835294, 0.882353, 0.929412, 1)
+polygon = PackedVector2Array(0, -1, 15, -1, 15, 1, 0, 1)
+
+[node name="Guard" type="Polygon2D" parent="SwordPivot"]
+color = Color(0.780392, 0.662745, 0.282353, 1)
+polygon = PackedVector2Array(-2, -3, 2, -3, 2, 3, -2, 3)
+
+[node name="Handle" type="Polygon2D" parent="SwordPivot"]
+color = Color(0.313726, 0.223529, 0.14902, 1)
+polygon = PackedVector2Array(-6, -1, 0, -1, 0, 1, -6, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = true
+zoom = Vector2(0.45, 0.45)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
