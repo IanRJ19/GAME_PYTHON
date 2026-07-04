@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -f README.md project.godot)",
+      "Bash(rm -rf assets/ASSET_CREDITS.md assets/audio assets/sprites/enemy assets/tiles)",
+      "Bash(rm -rf scenes)",
+      "Bash(rm -rf scripts/combat scripts/core scripts/enemies scripts/main scripts/ui scripts/world)",
+      "Bash(rm -f scripts/player/player.gd scripts/player/player.gd.uid)",
+      "Read(//c/Program Files/Unity/Hub/**)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files/Unity Hub/**)",
+      "Read(//c/Users/rayze/AppData/Roaming/UnityHub/**)",
+      "Bash(find \"/c/Program Files/Unity/Hub/Editor/6000.5.2f1\" -maxdepth 2 -iname \"Unity.exe\")",
+      "Read(//c/Program Files/Unity/Hub/Editor/6000.5.2f1/**)",
+      "Bash(find \"/c/Program Files/Unity/Hub/Editor/6000.5.2f1\" -iname \"Unity.exe\" 2>/dev/null)",
+      "Bash(find \"/c/Program Files/Unity/Hub/Editor/6000.5.2f1\" -maxdepth 3 2>/dev/null)",
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"; \\(Get-Item \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"\\).GetType\\(\\).FullName; \\(Get-ChildItem \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\" -Force -ErrorAction Stop\\).Count)"
+    ]
+  }
+}
