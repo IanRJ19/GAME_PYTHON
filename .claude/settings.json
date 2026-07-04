@@ -14,7 +14,13 @@
       "Read(//c/Program Files/Unity/Hub/Editor/6000.5.2f1/**)",
       "Bash(find \"/c/Program Files/Unity/Hub/Editor/6000.5.2f1\" -iname \"Unity.exe\" 2>/dev/null)",
       "Bash(find \"/c/Program Files/Unity/Hub/Editor/6000.5.2f1\" -maxdepth 3 2>/dev/null)",
-      "PowerShell(Test-Path \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"; \\(Get-Item \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"\\).GetType\\(\\).FullName; \\(Get-ChildItem \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\" -Force -ErrorAction Stop\\).Count)"
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"; \\(Get-Item \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\"\\).GetType\\(\\).FullName; \\(Get-ChildItem \"C:\\\\Program Files\\\\Unity\\\\Hub\\\\Editor\\\\6000.5.2f1\" -Force -ErrorAction Stop\\).Count)",
+      "Bash(git mv *)",
+      "Bash(mv assets *)",
+      "Bash(cp -r /c/Users/rayze/Documents/REPOSITORIOS/GAME_PYTHON/Assets/Scripts /c/Users/rayze/Documents/REPOSITORIOS/VICTARION/Victarion/Assets/Scripts)",
+      "Bash(cp -r /c/Users/rayze/Documents/REPOSITORIOS/GAME_PYTHON/Assets/Editor /c/Users/rayze/Documents/REPOSITORIOS/VICTARION/Victarion/Assets/Editor)",
+      "Bash(cp -r /c/Users/rayze/Documents/REPOSITORIOS/GAME_PYTHON/Assets/sprites /c/Users/rayze/Documents/REPOSITORIOS/VICTARION/Victarion/Assets/sprites)",
+      "Bash(find /c/Users/rayze/Documents/REPOSITORIOS/VICTARION/Victarion/Assets/Scripts /c/Users/rayze/Documents/REPOSITORIOS/VICTARION/Victarion/Assets/Editor -name *.cs)"
     ]
   }
 }
